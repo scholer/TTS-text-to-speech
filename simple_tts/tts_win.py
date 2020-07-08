@@ -40,7 +40,7 @@ def reinitialize_voice(rate=None, volume=None, voice=None):
 def speak(sentence):
     if spvoice is None:
         reinitialize_voice()
-    return spvoice.Speak(sentence.encode('utf-8'), 19)  # returns immediately.
+    return spvoice.Speak(sentence, 19)  # returns immediately.
 
 
 def pause():
@@ -70,7 +70,7 @@ def skip_all():
 def speak_and_wait_until_done(sentence):
     if spvoice is None:
         reinitialize_voice()
-    return spvoice.WaitUntilDone(sentence.encode('utf-8'), 19)  # blocks until done.
+    return spvoice.WaitUntilDone(sentence, 19)  # blocks until done.
 
 
 def test_speak_1():
